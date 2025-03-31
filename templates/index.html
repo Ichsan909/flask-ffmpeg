@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Streaming 24/7</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin: 10px auto;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Streaming Control 24/7</h1>
+    
+    <!-- Form untuk upload video -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="video">Upload Video:</label>
+        <input type="file" id="video" name="video" accept="video/*" required>
+        <br>
+        <button type="submit">Upload Video</button>
+    </form>
+    
+    <br>
+
+    <!-- Form untuk memulai streaming -->
+    <form action="/start" method="post">
+        <label for="rtmp_server">RTMP Server:</label>
+        <input type="text" id="rtmp_server" name="rtmp_server" placeholder="rtmp://a.rtmp.youtube.com/live2" required>
+        <br>
+        <label for="stream_key">Stream Key:</label>
+        <input type="text" id="stream_key" name="stream_key" placeholder="Masukkan stream key YouTube" required>
+        <br>
+        <button type="submit">Start Streaming</button>
+    </form>
+
+    <br>
+
+    <!-- Form untuk menghentikan streaming -->
+    <form action="/stop" method="post">
+        <button type="submit">Stop Streaming</button>
+    </form>
+</body>
+</html>
